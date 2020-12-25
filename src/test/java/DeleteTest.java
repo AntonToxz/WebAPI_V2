@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 public class DeleteTest {
     private final String token = "T_HHsYQ_bv4AAAAAAAAAAU2mw48OB2EfjFEEm-vlkcdUi1nGt3ygT9AvP-GNKSGT";
 
-    @Order(3)
     @Test
+    @Order(3)
     public void deleteTest() {
         String filename = "FeelsDankMan.png";
         JSONObject jsonObject = new JSONObject();

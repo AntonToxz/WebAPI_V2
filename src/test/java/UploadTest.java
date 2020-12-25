@@ -11,8 +11,8 @@ import static com.jayway.restassured.config.EncoderConfig.encoderConfig;
 public class UploadTest {
     private final String token = "T_HHsYQ_bv4AAAAAAAAAAU2mw48OB2EfjFEEm-vlkcdUi1nGt3ygT9AvP-GNKSGT";
 
-    @Order(1)
     @Test
+    @Order(1)
     public void uploadTest() {
         String filename = "FeelsDankMan.png";
         File file = new File("src/main/resources/"+filename);
