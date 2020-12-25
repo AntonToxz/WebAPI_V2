@@ -12,13 +12,11 @@ public class GetFileMetaDataTest {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("path", "/test/" + filename);
 
-        Response response = RestAssured.given()
+        RestAssured.given()
                 .header("Authorization", "Bearer " + token)
                 .contentType("application/json")
                 .body(jsonObject.toString())
                 .post("https://api.dropboxapi.com/2/files/get_metadata")
-                .thenReturn();
-
-        response.prettyPeek();
+                .then().statusCode(200);
     }
 }

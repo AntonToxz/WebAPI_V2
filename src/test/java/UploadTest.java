@@ -18,16 +18,14 @@ public class UploadTest {
         jsonObject.put("path", "/test/"+filename);
 
         RestAssured.config = RestAssured.config().encoderConfig(encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false));
-        Response response = RestAssured.given()
+        RestAssured.given()
                 .header("Authorization", "Bearer " + token)
                 .header("Dropbox-API-Arg", jsonObject.toString())
                 .header("Content-Type","application/octet-stream")
                 .contentType("application/octet-stream")
                 .body(file)
                 .post("https://content.dropboxapi.com/2/files/upload")
-                .thenReturn();
-
-        response.prettyPeek();
+                .then().statusCode(200);
     }
 
 }
