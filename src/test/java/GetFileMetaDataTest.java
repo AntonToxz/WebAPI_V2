@@ -1,11 +1,13 @@
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 import org.json.JSONObject;
+import org.junit.jupiter.api.Order;
 import org.testng.annotations.Test;
 
 public class GetFileMetaDataTest {
     private final String token = "T_HHsYQ_bv4AAAAAAAAAAU2mw48OB2EfjFEEm-vlkcdUi1nGt3ygT9AvP-GNKSGT";
 
+    @Order(2)
     @Test
     public void getMetaDataTest() {
         String filename = "FeelsDankMan.png";

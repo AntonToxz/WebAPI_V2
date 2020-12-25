@@ -1,6 +1,7 @@
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 import org.json.JSONObject;
+import org.junit.jupiter.api.Order;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -10,6 +11,7 @@ import static com.jayway.restassured.config.EncoderConfig.encoderConfig;
 public class UploadTest {
     private final String token = "T_HHsYQ_bv4AAAAAAAAAAU2mw48OB2EfjFEEm-vlkcdUi1nGt3ygT9AvP-GNKSGT";
 
+    @Order(1)
     @Test
     public void uploadTest() {
         String filename = "FeelsDankMan.png";
